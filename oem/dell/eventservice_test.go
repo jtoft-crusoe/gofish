@@ -12,8 +12,8 @@ import (
 	"testing"
 
 	"github.com/jtoft-crusoe/gofish/common"
-	"github.com/stmcginnis/gofish"
-	"github.com/stmcginnis/gofish/redfish"
+	"github\.com/jtoft-crusoe/gofish"
+	"github\.com/jtoft-crusoe/gofish/redfish"
 )
 
 const serviceRootBody = `{

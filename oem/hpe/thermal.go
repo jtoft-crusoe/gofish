@@ -7,7 +7,7 @@ package hpe
 import (
 	"encoding/json"
 
-	"github.com/stmcginnis/gofish/redfish"
+	"github\.com/jtoft-crusoe/gofish/redfish"
 )
 
 type Fan struct {

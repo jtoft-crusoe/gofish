@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 
 	"github.com/jtoft-crusoe/gofish/common"
-	"github.com/stmcginnis/gofish/redfish"
+	"github\.com/jtoft-crusoe/gofish/redfish"
 )
 
 // Capacity is used to represent storage capacity. The sum of the values

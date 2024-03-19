@@ -9,7 +9,7 @@ import (
 	"reflect"
 
 	"github.com/jtoft-crusoe/gofish/common"
-	"github.com/stmcginnis/gofish/redfish"
+	"github\.com/jtoft-crusoe/gofish/redfish"
 )
 
 // QuotaType shall indicate whether quotas are enabled and enforced by this file

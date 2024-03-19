@@ -1,9 +1,9 @@
  # Gofish - Redfish and Swordfish client library
 
-[![Go Doc](https://godoc.org/github.com/stmcginnis/gofish?status.svg)](http://godoc.org/github.com/stmcginnis/gofish)
-[![Go Report Card](https://goreportcard.com/badge/github.com/stmcginnis/gofish?branch=main)](https://goreportcard.com/report/github.com/stmcginnis/gofish)
-[![Releases](https://img.shields.io/github/release/stmcginnis/gofish/all.svg?style=flat-square)](https://github.com/stmcginnis/gofish/releases)
-[![LICENSE](https://img.shields.io/github/license/stmcginnis/gofish.svg?style=flat-square)](https://github.com/stmcginnis/gofish/blob/main/LICENSE)
+[![Go Doc](https://godoc.org/github\.com/jtoft-crusoe/gofish?status.svg)](http://godoc.org/github\.com/jtoft-crusoe/gofish)
+[![Go Report Card](https://goreportcard.com/badge/github\.com/jtoft-crusoe/gofish?branch=main)](https://goreportcard.com/report/github\.com/jtoft-crusoe/gofish)
+[![Releases](https://img.shields.io/github/release/stmcginnis/gofish/all.svg?style=flat-square)](https://github\.com/jtoft-crusoe/gofish/releases)
+[![LICENSE](https://img.shields.io/github/license/stmcginnis/gofish.svg?style=flat-square)](https://github\.com/jtoft-crusoe/gofish/blob/main/LICENSE)
 
 ![Gofish Logo](./images/gofish200x117.png)
 
@@ -24,7 +24,7 @@ package main
 import (
     "fmt"
 
-    "github.com/stmcginnis/gofish"
+    "github\.com/jtoft-crusoe/gofish"
 )
 
 func main() {
