@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var ioPerformanceLoSCapabilitiesBody = `{
@@ -98,7 +98,6 @@ var ioPerformanceLoSCapabilitiesBody = `{
 func TestIOPerformanceLoSCapabilities(t *testing.T) {
 	var result IOPerformanceLoSCapabilities
 	err := json.NewDecoder(strings.NewReader(ioPerformanceLoSCapabilitiesBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -125,7 +124,6 @@ func TestIOPerformanceLoSCapabilities(t *testing.T) {
 func TestIOPerformanceLoSCapabilitiesUpdate(t *testing.T) { //nolint:dupl
 	var result IOPerformanceLoSCapabilities
 	err := json.NewDecoder(strings.NewReader(ioPerformanceLoSCapabilitiesBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -138,7 +136,6 @@ func TestIOPerformanceLoSCapabilitiesUpdate(t *testing.T) { //nolint:dupl
 	result.MinSamplePeriod = "P0Y0M0DT0H0M5S"
 	result.MinSupportedIoOperationLatencyMicroseconds = 500
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

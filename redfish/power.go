@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 // InputType is the type of power input.

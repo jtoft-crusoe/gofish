@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var secureBootBody = `{
@@ -33,7 +33,6 @@ var secureBootBody = `{
 func TestSecureBoot(t *testing.T) {
 	var result SecureBoot
 	err := json.NewDecoder(strings.NewReader(secureBootBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -67,7 +66,6 @@ func TestSecureBoot(t *testing.T) {
 func TestSecureBootUpdate(t *testing.T) { //nolint:dupl
 	var result SecureBoot
 	err := json.NewDecoder(strings.NewReader(secureBootBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -77,7 +75,6 @@ func TestSecureBootUpdate(t *testing.T) { //nolint:dupl
 
 	result.SecureBootEnable = false
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

@@ -11,7 +11,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 // DeliveryRetryPolicy is the retry policy for delivery failure.
@@ -540,7 +540,6 @@ type HTTPHeaderProperty map[string][]string
 // SNMPSettings is shall contain the settings for an SNMP event
 // destination.
 type SNMPSettings struct {
-
 	// AuthenticationKey is used for SNMPv3 authentication. The value shall
 	// be `null` in responses.
 	AuthenticationKey string

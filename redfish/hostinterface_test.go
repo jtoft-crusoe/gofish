@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var hostInterfaceBody = `{
@@ -66,7 +66,6 @@ var hostInterfaceBody = `{
 func TestHostInterface(t *testing.T) {
 	var result HostInterface
 	err := json.NewDecoder(strings.NewReader(hostInterfaceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -104,7 +103,6 @@ func TestHostInterface(t *testing.T) {
 func TestHostInterfaceUpdate(t *testing.T) {
 	var result HostInterface
 	err := json.NewDecoder(strings.NewReader(hostInterfaceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -119,7 +117,6 @@ func TestHostInterfaceUpdate(t *testing.T) {
 	result.InterfaceEnabled = true
 	result.KernelAuthEnabled = true
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

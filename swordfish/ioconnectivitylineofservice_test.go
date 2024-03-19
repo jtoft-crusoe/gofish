@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var ioConnectivityLineOfServiceBody = strings.NewReader(
@@ -34,7 +34,6 @@ var ioConnectivityLineOfServiceBody = strings.NewReader(
 func TestIOConnectivityLineOfService(t *testing.T) {
 	var result IOConnectivityLineOfService
 	err := json.NewDecoder(ioConnectivityLineOfServiceBody).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}

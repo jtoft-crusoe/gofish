@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var biosBody = `{
@@ -99,7 +99,6 @@ var biosNoAttributesBody = `{
 func TestBios(t *testing.T) {
 	var result Bios
 	err := json.NewDecoder(strings.NewReader(biosBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -161,7 +160,6 @@ func TestBios(t *testing.T) {
 func TestBiosAttributes(t *testing.T) {
 	var result Bios
 	err := json.NewDecoder(strings.NewReader(biosBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -175,7 +173,6 @@ func TestBiosAttributes(t *testing.T) {
 func TestBiosNoAttributes(t *testing.T) {
 	var result Bios
 	err := json.NewDecoder(strings.NewReader(biosNoAttributesBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -189,7 +186,6 @@ func TestBiosNoAttributes(t *testing.T) {
 func TestUpdateBiosAttributes(t *testing.T) {
 	var result Bios
 	err := json.NewDecoder(strings.NewReader(biosBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -199,7 +195,6 @@ func TestUpdateBiosAttributes(t *testing.T) {
 
 	update := SettingsAttributes{"AssetTag": "test"}
 	err = result.UpdateBiosAttributes(update)
-
 	if err != nil {
 		t.Errorf("Error making UpdateBiosAttributes call: %s", err)
 	}
@@ -223,7 +218,6 @@ func TestUpdateBiosAttributes(t *testing.T) {
 func TestUpdateBiosAttributesApplyAt(t *testing.T) {
 	var result Bios
 	err := json.NewDecoder(strings.NewReader(biosBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -233,7 +227,6 @@ func TestUpdateBiosAttributesApplyAt(t *testing.T) {
 
 	update := SettingsAttributes{"AssetTag": "test"}
 	err = result.UpdateBiosAttributesApplyAt(update, common.AtMaintenanceWindowStartApplyTime)
-
 	if err != nil {
 		t.Errorf("Error making UpdateBiosAttributesApplyAt call: %s", err)
 	}

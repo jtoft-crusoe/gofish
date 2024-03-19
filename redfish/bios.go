@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 // Bios is used to represent BIOS attributes.
@@ -224,7 +224,7 @@ func (bios *Bios) UpdateBiosAttributesApplyAt(attrs SettingsAttributes, applyTim
 			data["@Redfish.SettingsApplyTime"] = map[string]string{"ApplyTime": string(applyTime)}
 		}
 
-		var header = make(map[string]string)
+		header := make(map[string]string)
 		if resp.Header["Etag"] != nil {
 			header["If-Match"] = resp.Header["Etag"][0]
 		}

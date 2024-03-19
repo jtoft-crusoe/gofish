@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var volumeBody = `{
@@ -157,7 +157,6 @@ var volumeBody = `{
 func TestVolume(t *testing.T) {
 	var result Volume
 	err := json.NewDecoder(strings.NewReader(volumeBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -235,7 +234,6 @@ func TestVolume(t *testing.T) {
 func TestVolumeUpdate(t *testing.T) {
 	var result Volume
 	err := json.NewDecoder(strings.NewReader(volumeBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -255,7 +253,6 @@ func TestVolumeUpdate(t *testing.T) {
 	result.WriteCachePolicy = OffWriteCachePolicyType
 	result.WriteHoleProtectionPolicy = OEMWriteHoleProtectionPolicyType
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

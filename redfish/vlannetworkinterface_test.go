@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var vlanNetworkInterfaceBody = `{
@@ -27,7 +27,6 @@ var vlanNetworkInterfaceBody = `{
 func TestVlanNetworkInterface(t *testing.T) {
 	var result VLanNetworkInterface
 	err := json.NewDecoder(strings.NewReader(vlanNetworkInterfaceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -53,7 +52,6 @@ func TestVlanNetworkInterface(t *testing.T) {
 func TestVlanNetworkInterfaceUpdate(t *testing.T) { //nolint:dupl
 	var result VLanNetworkInterface
 	err := json.NewDecoder(strings.NewReader(vlanNetworkInterfaceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -63,7 +61,6 @@ func TestVlanNetworkInterfaceUpdate(t *testing.T) { //nolint:dupl
 
 	result.VLANEnable = false
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

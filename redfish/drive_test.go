@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var driveBody = `{
@@ -93,7 +93,6 @@ var driveBody = `{
 func TestDrive(t *testing.T) {
 	var result Drive
 	err := json.NewDecoder(strings.NewReader(driveBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -147,7 +146,6 @@ func TestDrive(t *testing.T) {
 func TestDriveUpdate(t *testing.T) {
 	var result Drive
 	err := json.NewDecoder(strings.NewReader(driveBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -160,7 +158,6 @@ func TestDriveUpdate(t *testing.T) {
 	result.StatusIndicator = HotspareStatusIndicator
 	result.WriteCacheEnabled = false
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

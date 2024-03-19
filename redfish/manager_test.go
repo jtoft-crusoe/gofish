@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var oemLinksBody = `
@@ -33,6 +33,7 @@ var oemLinksBody = `
 				}
 			}
 `
+
 var oemDataBody = `
 		{
 			"Dell": {
@@ -182,6 +183,7 @@ var oemActions = `
 	}
 }
 `
+
 var managerBody = `{
 		"@Redfish.Copyright": "Copyright 2014-2019 DMTF. All rights reserved.",
 		"@odata.context": "/redfish/v1/$metadata#Manager.Manager",
@@ -353,7 +355,6 @@ func TestManager(t *testing.T) {
 func TestManagerUpdate(t *testing.T) {
 	var result Manager
 	err := json.NewDecoder(strings.NewReader(managerBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -364,7 +365,6 @@ func TestManagerUpdate(t *testing.T) {
 	result.AutoDSTEnabled = false
 	result.DateTimeLocalOffset = "+05:00"
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}
@@ -383,7 +383,6 @@ func TestManagerUpdate(t *testing.T) {
 func TestManagerReset(t *testing.T) {
 	var result Manager
 	err := json.NewDecoder(strings.NewReader(managerBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}

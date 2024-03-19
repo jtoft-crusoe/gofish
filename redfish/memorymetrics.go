@@ -5,7 +5,7 @@
 package redfish
 
 import (
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 // AlarmTrips shall contain properties describing the types of alarms that have

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var fileShareBody = `{
@@ -66,7 +66,6 @@ var fileShareBody = `{
 func TestFileShare(t *testing.T) {
 	var result FileShare
 	err := json.NewDecoder(strings.NewReader(fileShareBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -132,7 +131,6 @@ func TestFileShare(t *testing.T) {
 func TestFileShareUpdate(t *testing.T) {
 	var result FileShare
 	err := json.NewDecoder(strings.NewReader(fileShareBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -144,7 +142,6 @@ func TestFileShareUpdate(t *testing.T) {
 	result.FileShareQuotaType = SoftQuotaType
 	result.FileShareTotalQuotaBytes = 1024
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

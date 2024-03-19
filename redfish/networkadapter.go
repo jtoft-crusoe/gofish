@@ -7,7 +7,7 @@ package redfish
 import (
 	"encoding/json"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 // ControllerCapabilities shall describe the capabilities of a controller.
@@ -155,7 +155,6 @@ type DataCenterBridging struct {
 // NPIV shall contain N_Port ID Virtualization (NPIV) capabilities for a
 // controller.
 type NPIV struct {
-
 	// MaxDeviceLogins shall be the maximum number of N_Port ID Virtualization
 	// (NPIV) logins allowed simultaneously from all ports on this controller.
 	MaxDeviceLogins int

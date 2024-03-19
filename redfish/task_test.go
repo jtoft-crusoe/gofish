@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var taskBody = strings.NewReader(
@@ -65,7 +65,6 @@ var taskBody = strings.NewReader(
 func TestTask(t *testing.T) {
 	var result Task
 	err := json.NewDecoder(taskBody).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}

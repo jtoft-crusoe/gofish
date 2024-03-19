@@ -22,12 +22,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 	"github.com/stmcginnis/gofish/redfish"
 )
 
-const userAgent = "gofish/1.0"
-const applicationJSON = "application/json"
+const (
+	userAgent       = "gofish/1.0"
+	applicationJSON = "application/json"
+)
 
 // APIClient represents a connection to a Redfish/Swordfish enabled service
 // or device.

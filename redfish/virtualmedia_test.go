@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var vmBody = `{
@@ -58,7 +58,6 @@ var vmBody = `{
 func TestVirtualMedia(t *testing.T) {
 	var result VirtualMedia
 	err := json.NewDecoder(strings.NewReader(vmBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -107,7 +106,6 @@ func TestVirtualMedia(t *testing.T) {
 func TestVirtualMediaUpdate(t *testing.T) {
 	var result VirtualMedia
 	err := json.NewDecoder(strings.NewReader(vmBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -117,7 +115,6 @@ func TestVirtualMediaUpdate(t *testing.T) {
 	result.UserName = "Fred"
 	result.WriteProtected = false
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}
@@ -137,7 +134,6 @@ func TestVirtualMediaUpdate(t *testing.T) {
 func TestVirtualMediaEject(t *testing.T) {
 	var result VirtualMedia
 	err := json.NewDecoder(strings.NewReader(vmBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -146,7 +142,6 @@ func TestVirtualMediaEject(t *testing.T) {
 	result.SetClient(testClient)
 
 	err = result.EjectMedia()
-
 	if err != nil {
 		t.Errorf("Error making EjectMedia call: %s", err)
 	}
@@ -162,7 +157,6 @@ func TestVirtualMediaEject(t *testing.T) {
 func TestVirtualMediaInsert(t *testing.T) {
 	var result VirtualMedia
 	err := json.NewDecoder(strings.NewReader(vmBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -171,7 +165,6 @@ func TestVirtualMediaInsert(t *testing.T) {
 	result.SetClient(testClient)
 
 	err = result.InsertMedia("https://example.com/image", false, true)
-
 	if err != nil {
 		t.Errorf("Error making InsertMedia call: %s", err)
 	}
@@ -194,7 +187,6 @@ func TestVirtualMediaInsert(t *testing.T) {
 func TestVirtualMediaInsertConfig(t *testing.T) {
 	var result VirtualMedia
 	err := json.NewDecoder(strings.NewReader(vmBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}

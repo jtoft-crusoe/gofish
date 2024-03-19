@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var spareResourceSetBody = `{
@@ -79,7 +79,6 @@ var spareResourceSetBody = `{
 func TestSpareResourceSet(t *testing.T) {
 	var result SpareResourceSet
 	err := json.NewDecoder(strings.NewReader(spareResourceSetBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -109,7 +108,6 @@ func TestSpareResourceSet(t *testing.T) {
 func TestSpareResourceSetUpdate(t *testing.T) { //nolint:dupl
 	var result SpareResourceSet
 	err := json.NewDecoder(strings.NewReader(spareResourceSetBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -122,7 +120,6 @@ func TestSpareResourceSetUpdate(t *testing.T) { //nolint:dupl
 	result.TimeToProvision = "P0DT06H30M5S"
 	result.TimeToReplenish = "P5DT0H12M0S"
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

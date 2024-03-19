@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 // ChassisType is a physical form of the chassis
@@ -122,7 +122,6 @@ const (
 // PhysicalSecurity shall describe the sensor state of the physical
 // security.
 type PhysicalSecurity struct {
-
 	// IntrusionSensor is This property shall represent the state of this
 	// physical security sensor.  Hardware intrusion indicates the internal
 	// hardware is detected as being accessed in an insecure state.

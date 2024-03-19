@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var eventDestinationBody = `{
@@ -57,7 +57,6 @@ var eventDestinationsBody = `{
 func TestEventDestination(t *testing.T) {
 	var result EventDestination
 	err := json.NewDecoder(strings.NewReader(eventDestinationBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -97,7 +96,6 @@ func TestEventDestination(t *testing.T) {
 func TestEventDestinationUpdate(t *testing.T) {
 	var result EventDestination
 	err := json.NewDecoder(strings.NewReader(eventDestinationBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -107,7 +105,6 @@ func TestEventDestinationUpdate(t *testing.T) {
 
 	result.Context = "NewContext"
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

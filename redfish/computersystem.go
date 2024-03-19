@@ -10,7 +10,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 // BootOrderTypes is the choice of boot order property to use when controller
@@ -269,7 +269,6 @@ const (
 
 // Boot contains properties which describe boot information for a system.
 type Boot struct {
-
 	// AliasBootOrder shall be an ordered array
 	// of boot source aliases (of type BootSource) representing the
 	// persistent Boot Order of this computer system.
@@ -932,7 +931,7 @@ func (computersystem *ComputerSystem) UpdateBootAttributesApplyAt(attrs Settings
 			data["@Redfish.SettingsApplyTime"] = map[string]string{"ApplyTime": string(applyTime)}
 		}
 
-		var header = make(map[string]string)
+		header := make(map[string]string)
 		if resp.Header["Etag"] != nil {
 			header["If-Match"] = resp.Header["Etag"][0]
 		}

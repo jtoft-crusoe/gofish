@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 const (
@@ -110,7 +110,6 @@ func assertEquals(t testing.TB, expected, actual string) {
 func TestEventService(t *testing.T) {
 	var result EventService
 	err := json.NewDecoder(strings.NewReader(eventServiceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -134,7 +133,6 @@ func TestEventService(t *testing.T) {
 func TestEventServiceUpdate(t *testing.T) {
 	var result EventService
 	err := json.NewDecoder(strings.NewReader(eventServiceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -146,7 +144,6 @@ func TestEventServiceUpdate(t *testing.T) {
 	result.DeliveryRetryIntervalSeconds = 60
 	result.ServiceEnabled = true
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}
@@ -217,7 +214,8 @@ func TestEventServiceCreateEventSubscription(t *testing.T) {
 	validDestinationURI := "https://myeventreceiver/eventreceiver"
 	validEventTypes := []EventType{AlertEventType}
 	validCustomHeader := map[string]string{
-		"Header": "HeaderValue"}
+		"Header": "HeaderValue",
+	}
 	validDestinationProtocol := RedfishEventDestinationProtocol
 	validContext := "Public"
 	validOem := OemVendor{
@@ -236,7 +234,6 @@ func TestEventServiceCreateEventSubscription(t *testing.T) {
 		validContext,
 		validOem,
 	)
-
 	// validate the return values
 	if err != nil {
 		t.Errorf("Error making CreateEventSubscription call: %s", err)
@@ -330,7 +327,6 @@ func TestEventServiceCreateEventSubscriptionInstance(t *testing.T) {
 		validDeliveryRetryPolicy,
 		nil,
 	)
-
 	// validate the return values
 	if err != nil {
 		t.Errorf("Error making CreateEventSubscription call: %s", err)
@@ -392,7 +388,6 @@ func TestEventServiceDeleteEventSubscription(t *testing.T) {
 	// create event subscription
 	subscriptionToDelete := fmt.Sprintf(subscriptionMask, subsctiptionID)
 	err = result.DeleteEventSubscription(subscriptionToDelete)
-
 	// validate the return values
 	if err != nil {
 		t.Errorf("Error making DeleteEventSubscription call: %s", err)
@@ -537,7 +532,6 @@ func TestEventServiceCreateEventSubscriptionWithoutOptionalParameters(t *testing
 		validContext,
 		nil,
 	)
-
 	// validate the return values
 	if err != nil {
 		t.Errorf("Error making CreateEventSubscription call: %s", err)

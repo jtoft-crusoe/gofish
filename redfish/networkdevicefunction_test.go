@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var networkDeviceFunctionBody = `{
@@ -79,7 +79,6 @@ var networkDeviceFunctionBody = `{
 func TestNetworkDeviceFunction(t *testing.T) {
 	var result NetworkDeviceFunction
 	err := json.NewDecoder(strings.NewReader(networkDeviceFunctionBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -121,7 +120,6 @@ func TestNetworkDeviceFunction(t *testing.T) {
 func TestNetworkDeviceFunctionUpdate(t *testing.T) { //nolint:dupl
 	var result NetworkDeviceFunction
 	err := json.NewDecoder(strings.NewReader(networkDeviceFunctionBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -132,7 +130,6 @@ func TestNetworkDeviceFunctionUpdate(t *testing.T) { //nolint:dupl
 	result.BootMode = FibreChannelBootMode
 	result.DeviceEnabled = true
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

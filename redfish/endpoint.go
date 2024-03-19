@@ -7,7 +7,7 @@ package redfish
 import (
 	"encoding/json"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 // EntityRole is the role of the endpoint.
@@ -268,7 +268,6 @@ func ListReferencedEndpoints(c common.Client, link string) ([]*Endpoint, error) 
 // GCID shall contain the Gen-Z Core Specification-defined Global
 // Component ID.
 type GCID struct {
-
 	// CID shall contain the 12 bit component identifier
 	// portion of the GCID of the entity.
 	CID string
@@ -279,7 +278,6 @@ type GCID struct {
 
 // GenZ shall contain the Gen-Z related properties for an entity.
 type GenZ struct {
-
 	// AccessKey shall contain the Gen-Z Core Specification-
 	// defined 6 bit Access Key for the entity.
 	AccessKey string

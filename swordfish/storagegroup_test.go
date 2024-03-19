@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var storageGroupBody = `{
@@ -74,7 +74,6 @@ var storageGroupBody = `{
 func TestStorageGroup(t *testing.T) {
 	var result StorageGroup
 	err := json.NewDecoder(strings.NewReader(storageGroupBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -120,7 +119,6 @@ func TestStorageGroup(t *testing.T) {
 func TestStorageGroupUpdate(t *testing.T) {
 	var result StorageGroup
 	err := json.NewDecoder(strings.NewReader(storageGroupBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -132,7 +130,6 @@ func TestStorageGroupUpdate(t *testing.T) {
 	result.AuthenticationMethod = NoneAuthenticationMethod
 	result.VolumesAreExposed = true
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

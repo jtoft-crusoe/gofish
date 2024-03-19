@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/jtoft-crusoe/gofish/common"
 	"github.com/stmcginnis/gofish"
-	"github.com/stmcginnis/gofish/common"
 	"github.com/stmcginnis/gofish/redfish"
 )
 
@@ -155,7 +155,6 @@ const eventServiceBody = `{
 func TestEventService(t *testing.T) {
 	var result EventService
 	err := json.NewDecoder(strings.NewReader(eventServiceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -240,7 +239,6 @@ func TestDellSubmitTestEvent(t *testing.T) {
 	defer server.Close()
 
 	c, err = gofish.Connect(gofish.ClientConfig{Endpoint: server.URL, HTTPClient: server.Client()})
-
 	if err != nil {
 		t.Errorf("failed to establish client to mock http server due to: %v", err)
 	}

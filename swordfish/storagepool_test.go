@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var storagePoolBody = `{
@@ -96,7 +96,6 @@ var storagePoolBody = `{
 func TestStoragePool(t *testing.T) {
 	var result StoragePool
 	err := json.NewDecoder(strings.NewReader(storagePoolBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -122,7 +121,6 @@ func TestStoragePool(t *testing.T) {
 func TestStoragePoolUpdate(t *testing.T) { //nolint:dupl
 	var result StoragePool
 	err := json.NewDecoder(strings.NewReader(storagePoolBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -135,7 +133,6 @@ func TestStoragePoolUpdate(t *testing.T) { //nolint:dupl
 	result.Encrypted = false
 	result.RecoverableCapacitySourceCount = 2
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

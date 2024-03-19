@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"reflect"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 // AccountProviderTypes is
@@ -78,7 +78,6 @@ const (
 // the external account providers account information to the local
 // Redfish Role.
 type RoleMapping struct {
-
 	// LocalRole shall contain the RoleId property value
 	// within a Role Resource on this Redfish Service to which to map the
 	// remote user or group.
@@ -95,7 +94,6 @@ type RoleMapping struct {
 // Authentication is shall contain the information required to
 // authenticate to the external service.
 type Authentication struct {
-
 	// AuthenticationType is used to connect to the external account
 	// provider.
 	AuthenticationType AuthenticationTypes
@@ -120,7 +118,6 @@ type Authentication struct {
 // external account provider services that can provide accounts for this
 // manager to use for authentication.
 type ExternalAccountProvider struct {
-
 	// Authentication shall contain the authentication
 	// information for the external account provider.
 	Authentication Authentication

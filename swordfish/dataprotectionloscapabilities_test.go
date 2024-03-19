@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var dataProtectionLoSCapabilitiesBody = `{
@@ -52,7 +52,6 @@ var dataProtectionLoSCapabilitiesBody = `{
 func TestDataProtectionLoSCapabilities(t *testing.T) {
 	var result DataProtectionLoSCapabilities
 	err := json.NewDecoder(strings.NewReader(dataProtectionLoSCapabilitiesBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -83,7 +82,6 @@ func TestDataProtectionLoSCapabilities(t *testing.T) {
 func TestDataProtectionLoSCapabilitiesUpdate(t *testing.T) {
 	var result DataProtectionLoSCapabilities
 	err := json.NewDecoder(strings.NewReader(dataProtectionLoSCapabilitiesBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -93,7 +91,6 @@ func TestDataProtectionLoSCapabilitiesUpdate(t *testing.T) {
 
 	result.SupportsIsolated = false
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

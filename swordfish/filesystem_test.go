@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var fileSystemBody = `{
@@ -128,7 +128,6 @@ var fileSystemBody = `{
 func TestFileSystem(t *testing.T) {
 	var result FileSystem
 	err := json.NewDecoder(strings.NewReader(fileSystemBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -178,7 +177,6 @@ func TestFileSystem(t *testing.T) {
 func TestFileSystemUpdate(t *testing.T) {
 	var result FileSystem
 	err := json.NewDecoder(strings.NewReader(fileSystemBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -191,7 +189,6 @@ func TestFileSystemUpdate(t *testing.T) {
 	result.ClusterSizeBytes = 1024
 	result.MaxFileNameLengthBytes = 1024
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

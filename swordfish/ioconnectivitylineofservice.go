@@ -5,7 +5,7 @@
 package swordfish
 
 import (
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 // IOConnectivityLineOfService is used to specify the characteristics of

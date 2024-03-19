@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var ioConnectivityLoSCapabilitiesBody = `{
@@ -65,7 +65,6 @@ var ioConnectivityLoSCapabilitiesBody = `{
 func TestIOConnectivityLoSCapabilities(t *testing.T) {
 	var result IOConnectivityLoSCapabilities
 	err := json.NewDecoder(strings.NewReader(ioConnectivityLoSCapabilitiesBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -99,7 +98,6 @@ func TestIOConnectivityLoSCapabilities(t *testing.T) {
 func TestIOConnectivityLoSCapabilitiesUpdate(t *testing.T) {
 	var result IOConnectivityLoSCapabilities
 	err := json.NewDecoder(strings.NewReader(ioConnectivityLoSCapabilitiesBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -110,7 +108,6 @@ func TestIOConnectivityLoSCapabilitiesUpdate(t *testing.T) {
 	result.MaxSupportedBytesPerSecond = 500
 	result.MaxSupportedIOPS = 10000
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

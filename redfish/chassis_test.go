@@ -12,11 +12,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
-const TestAssetTag = "TestAssetTag"
-const TestChassisPath = "/redfish/v1/Chassis/Chassis-1"
+const (
+	TestAssetTag    = "TestAssetTag"
+	TestChassisPath = "/redfish/v1/Chassis/Chassis-1"
+)
 
 var chassisBody = `{
 		"@odata.context": "/redfish/v1/$metadata#Chassis.Chassis",
@@ -126,7 +128,6 @@ var driveCollection = `{
 func TestChassis(t *testing.T) {
 	var result Chassis
 	err := json.NewDecoder(strings.NewReader(chassisBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -211,7 +212,6 @@ func TestChassis(t *testing.T) {
 func TestMinimumChassis(t *testing.T) {
 	var result Chassis
 	err := json.NewDecoder(strings.NewReader(supermicroRAIDChassisBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -234,7 +234,6 @@ func TestMinimumChassis(t *testing.T) {
 func TestLinkedDriveChassis(t *testing.T) {
 	var result Chassis
 	err := json.NewDecoder(strings.NewReader(supermicroRAIDChassisBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -252,7 +251,6 @@ func TestLinkedDriveChassis(t *testing.T) {
 func TestChassisUpdate(t *testing.T) {
 	var result Chassis
 	err := json.NewDecoder(strings.NewReader(chassisBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -262,7 +260,6 @@ func TestChassisUpdate(t *testing.T) {
 
 	result.AssetTag = TestAssetTag
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}
@@ -296,7 +293,6 @@ func getCall(body string) *http.Response {
 func TestChassisDrives(t *testing.T) {
 	var result Chassis
 	err := json.NewDecoder(strings.NewReader(chassisBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -331,7 +327,6 @@ func TestChassisDrives(t *testing.T) {
 func TestChassisLinkedDrives(t *testing.T) {
 	var result Chassis
 	err := json.NewDecoder(strings.NewReader(supermicroRAIDChassisBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}

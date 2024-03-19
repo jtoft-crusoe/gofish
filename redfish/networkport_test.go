@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var networkPortBody = `{
@@ -81,7 +81,6 @@ var networkPortBody = `{
 func TestNetworkPort(t *testing.T) {
 	var result NetworkPort
 	err := json.NewDecoder(strings.NewReader(networkPortBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -119,7 +118,6 @@ func TestNetworkPort(t *testing.T) {
 func TestNetworkPortUpdate(t *testing.T) {
 	var result NetworkPort
 	err := json.NewDecoder(strings.NewReader(networkPortBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -131,7 +129,6 @@ func TestNetworkPortUpdate(t *testing.T) {
 	result.EEEEnabled = true
 	result.WakeOnLANEnabled = true
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

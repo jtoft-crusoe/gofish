@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var computerSystemBody = `{
@@ -139,7 +139,6 @@ var computerSystemBody = `{
 func TestComputerSystem(t *testing.T) { //nolint
 	var result ComputerSystem
 	err := json.NewDecoder(strings.NewReader(computerSystemBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -282,7 +281,6 @@ func TestComputerSystem(t *testing.T) { //nolint
 func TestComputerSystemUpdate(t *testing.T) {
 	var result ComputerSystem
 	err := json.NewDecoder(strings.NewReader(computerSystemBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -294,7 +292,6 @@ func TestComputerSystemUpdate(t *testing.T) {
 	result.HostName = "TestHostName"
 	result.IndicatorLED = common.BlinkingIndicatorLED
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}
@@ -330,7 +327,6 @@ var bootOptionBody = `{
 func TestBootOption(t *testing.T) {
 	var result BootOption
 	err := json.NewDecoder(strings.NewReader(bootOptionBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}

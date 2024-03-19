@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"reflect"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 // AccountTypes is the type of the account.
@@ -199,7 +199,6 @@ func ListReferencedManagerAccounts(c common.Client, link string) ([]*ManagerAcco
 
 // SNMPUserInfo is shall contain the SNMP settings for an account.
 type SNMPUserInfo struct {
-
 	// AuthenticationKey shall contain the key for SNMPv3
 	// authentication. The value shall be `null` in responses. This
 	// property accepts a passphrase or a hex-encoded key. If the string

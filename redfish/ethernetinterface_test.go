@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var ethernetInterfaceBody = `{
@@ -58,7 +58,6 @@ var ethernetInterfaceBody = `{
 func TestEthernetInterface(t *testing.T) {
 	var result EthernetInterface
 	err := json.NewDecoder(strings.NewReader(ethernetInterfaceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -105,7 +104,6 @@ func TestEthernetInterface(t *testing.T) {
 func TestEthernetInterfaceUpdate(t *testing.T) {
 	var result EthernetInterface
 	err := json.NewDecoder(strings.NewReader(ethernetInterfaceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -122,7 +120,6 @@ func TestEthernetInterfaceUpdate(t *testing.T) {
 	result.MTUSize = 9216
 	result.SpeedMbps = 1000
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}
@@ -213,7 +210,6 @@ var ethernetInterfaceIPv6Body = `{
 func TestEthernetInterfaceIPv6(t *testing.T) {
 	var result EthernetInterface
 	err := json.NewDecoder(strings.NewReader(ethernetInterfaceIPv6Body)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}

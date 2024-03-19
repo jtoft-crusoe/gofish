@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var logServiceBody = `{
@@ -42,7 +42,6 @@ var logServiceBody = `{
 func TestLogService(t *testing.T) {
 	var result LogService
 	err := json.NewDecoder(strings.NewReader(logServiceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -84,7 +83,6 @@ func TestLogService(t *testing.T) {
 func TestLogServiceUpdate(t *testing.T) { //nolint:dupl
 	var result LogService
 	err := json.NewDecoder(strings.NewReader(logServiceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -94,7 +92,6 @@ func TestLogServiceUpdate(t *testing.T) { //nolint:dupl
 
 	result.ServiceEnabled = false
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

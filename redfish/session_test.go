@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var sessionBody = `{
@@ -32,7 +32,6 @@ var sessionBody = `{
 func TestSession(t *testing.T) {
 	var result Session
 	err := json.NewDecoder(strings.NewReader(sessionBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -104,7 +103,6 @@ func TestCreateSession(t *testing.T) {
 		"user",
 		"password",
 	)
-
 	// validate the return values
 	if err != nil {
 		t.Errorf("Error making CreateSession call: %s", err)
@@ -139,7 +137,6 @@ func TestCreateSession(t *testing.T) {
 func TestCreateSessionFullURIPath(t *testing.T) {
 	var result Session
 	err := json.NewDecoder(strings.NewReader(sessionBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -183,7 +180,6 @@ func TestCreateSessionFullURIPath(t *testing.T) {
 		"user",
 		"password",
 	)
-
 	// validate the return values
 	if err != nil {
 		t.Errorf("Error making CreateSession call: %s", err)

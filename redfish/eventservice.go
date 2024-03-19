@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 // EventFormatType is
@@ -442,7 +442,6 @@ type SSEFilterPropertiesSupported struct {
 
 // SMTP is shall contain settings for SMTP event delivery.
 type SMTP struct {
-
 	// Authentication shall contain the authentication
 	// method for the SMTP server.
 	Authentication SMTPAuthenticationMethods

@@ -10,8 +10,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/jtoft-crusoe/gofish/common"
 	"github.com/stmcginnis/gofish"
-	"github.com/stmcginnis/gofish/common"
 	"github.com/stmcginnis/gofish/redfish"
 )
 

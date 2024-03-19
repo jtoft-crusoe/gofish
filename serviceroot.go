@@ -7,7 +7,7 @@ package gofish
 import (
 	"encoding/json"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 	"github.com/stmcginnis/gofish/redfish"
 	"github.com/stmcginnis/gofish/swordfish"
 )

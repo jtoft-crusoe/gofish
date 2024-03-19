@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var endpointGroupBody = `{
@@ -32,7 +32,6 @@ var endpointGroupBody = `{
 func TestEndpointGroup(t *testing.T) {
 	var result EndpointGroup
 	err := json.NewDecoder(strings.NewReader(endpointGroupBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -70,7 +69,6 @@ func TestEndpointGroup(t *testing.T) {
 func TestEndpointGroupUpdate(t *testing.T) { //nolint:dupl
 	var result EndpointGroup
 	err := json.NewDecoder(strings.NewReader(endpointGroupBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -83,7 +81,6 @@ func TestEndpointGroupUpdate(t *testing.T) { //nolint:dupl
 	result.Preferred = true
 	result.TargetEndpointGroupIdentifier = 9
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

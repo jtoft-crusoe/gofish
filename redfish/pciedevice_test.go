@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var (
@@ -100,7 +100,6 @@ var (
 func TestPCIeDevice(t *testing.T) {
 	var result PCIeDevice
 	err := json.NewDecoder(strings.NewReader(pcieDeviceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -130,7 +129,6 @@ func TestPCIeDevice(t *testing.T) {
 func TestOldPCIeDevice(t *testing.T) {
 	var result PCIeDevice
 	err := json.NewDecoder(strings.NewReader(pcieDeviceOldBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -164,7 +162,6 @@ func TestOldPCIeDevice(t *testing.T) {
 func TestPCIeDeviceUpdate(t *testing.T) { //nolint:dupl
 	var result PCIeDevice
 	err := json.NewDecoder(strings.NewReader(pcieDeviceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -174,7 +171,6 @@ func TestPCIeDeviceUpdate(t *testing.T) { //nolint:dupl
 
 	result.AssetTag = TestAssetTag
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

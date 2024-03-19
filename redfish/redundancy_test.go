@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var redundancyBody = `{
@@ -36,7 +36,6 @@ var redundancyBody = `{
 func TestRedundancy(t *testing.T) {
 	var result Redundancy
 	err := json.NewDecoder(strings.NewReader(redundancyBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -62,7 +61,6 @@ func TestRedundancy(t *testing.T) {
 func TestRedundancyUpdate(t *testing.T) { //nolint:dupl
 	var result Redundancy
 	err := json.NewDecoder(strings.NewReader(redundancyBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -73,7 +71,6 @@ func TestRedundancyUpdate(t *testing.T) { //nolint:dupl
 	result.Mode = NotRedundantRedundancyMode
 	result.RedundancyEnabled = true
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var jobBody = strings.NewReader(
@@ -40,7 +40,7 @@ var jobBody = strings.NewReader(
 		"StartTime": "2012-03-07T14:04+06:00",
 		"StepOrder": [
         	"Step-1"
-    	],		
+    	],
 		"Steps": {
 			"@odata.id": "/redfish/v1/JobService/Jobs/Job-1/Steps"
 		},
@@ -52,7 +52,6 @@ var jobBody = strings.NewReader(
 func TestJob(t *testing.T) {
 	var result Job
 	err := json.NewDecoder(jobBody).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var powerBody = strings.NewReader(
@@ -504,7 +504,6 @@ var invalidPowerBody = strings.NewReader(
 func TestPower(t *testing.T) {
 	var result Power
 	err := json.NewDecoder(powerBody).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -545,7 +544,6 @@ func TestPower(t *testing.T) {
 func TestNonconformingPower(t *testing.T) {
 	var result Power
 	err := json.NewDecoder(invalidPowerBody).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}

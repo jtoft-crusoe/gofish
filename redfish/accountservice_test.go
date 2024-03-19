@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var accountServiceBody = `{
@@ -36,7 +36,6 @@ var accountServiceBody = `{
 func TestAccountService(t *testing.T) {
 	var result AccountService
 	err := json.NewDecoder(strings.NewReader(accountServiceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -71,7 +70,6 @@ func TestAccountService(t *testing.T) {
 func TestAccountServiceUpdate(t *testing.T) {
 	var result AccountService
 	err := json.NewDecoder(strings.NewReader(accountServiceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -82,7 +80,6 @@ func TestAccountServiceUpdate(t *testing.T) {
 	orginalValue := result.AccountLockoutCounterResetEnabled
 	result.AccountLockoutCounterResetEnabled = !orginalValue
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

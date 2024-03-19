@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var endpointBody = strings.NewReader(
@@ -107,7 +107,6 @@ var endpointBody = strings.NewReader(
 func TestEndpoint(t *testing.T) {
 	var result Endpoint
 	err := json.NewDecoder(endpointBody).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}

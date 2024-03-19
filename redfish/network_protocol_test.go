@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var networkProtocolBody = `{
@@ -130,7 +130,6 @@ var networkProtocolBody = `{
 func TestNetworkProtocol(t *testing.T) {
 	var result NetworkProtocolSettings
 	err := json.NewDecoder(strings.NewReader(networkProtocolBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -153,7 +152,6 @@ func TestNetworkProtocol(t *testing.T) {
 func TestNetworkProtocol_Update(t *testing.T) {
 	var result NetworkProtocolSettings
 	err := json.NewDecoder(strings.NewReader(networkProtocolBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var dataStorageLoSCapabilitiesBody = `{
@@ -51,7 +51,6 @@ var dataStorageLoSCapabilitiesBody = `{
 func TestDataStorageLoSCapabilities(t *testing.T) {
 	var result DataStorageLoSCapabilities
 	err := json.NewDecoder(strings.NewReader(dataStorageLoSCapabilitiesBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -86,7 +85,6 @@ func TestDataStorageLoSCapabilities(t *testing.T) {
 func TestDataStorageLoSCapabilitiesUpdate(t *testing.T) {
 	var result DataStorageLoSCapabilities
 	err := json.NewDecoder(strings.NewReader(dataStorageLoSCapabilitiesBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -97,7 +95,6 @@ func TestDataStorageLoSCapabilitiesUpdate(t *testing.T) {
 	result.MaximumRecoverableCapacitySourceCount = 10
 	result.SupportsSpaceEfficiency = true
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var compositionServiceBody = `{
@@ -38,7 +38,6 @@ var compositionServiceBody = `{
 func TestCompositionService(t *testing.T) {
 	var result CompositionService
 	err := json.NewDecoder(strings.NewReader(compositionServiceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -80,7 +79,6 @@ func TestCompositionService(t *testing.T) {
 func TestCompositionServiceUpdate(t *testing.T) {
 	var result CompositionService
 	err := json.NewDecoder(strings.NewReader(compositionServiceBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -91,7 +89,6 @@ func TestCompositionServiceUpdate(t *testing.T) {
 	result.ServiceEnabled = false
 	result.AllowOverprovisioning = false
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

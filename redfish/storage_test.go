@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var storageBody = `{
@@ -128,7 +128,6 @@ var storageBody = `{
 func TestStorage(t *testing.T) {
 	var result Storage
 	err := json.NewDecoder(strings.NewReader(storageBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -163,7 +162,6 @@ func TestStorage(t *testing.T) {
 func TestStorageControllerUpdate(t *testing.T) {
 	var result Storage
 	err := json.NewDecoder(strings.NewReader(storageBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -177,7 +175,6 @@ func TestStorageControllerUpdate(t *testing.T) {
 	testClient := &common.TestClient{}
 	scResult.SetClient(testClient)
 	err = scResult.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

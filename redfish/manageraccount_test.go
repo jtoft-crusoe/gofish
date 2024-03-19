@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var managerAccountBody = `{
@@ -36,7 +36,6 @@ var managerAccountBody = `{
 func TestManagerAccount(t *testing.T) {
 	var result ManagerAccount
 	err := json.NewDecoder(strings.NewReader(managerAccountBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -62,7 +61,6 @@ func TestManagerAccount(t *testing.T) {
 func TestManagerAccountUpdate(t *testing.T) {
 	var result ManagerAccount
 	err := json.NewDecoder(strings.NewReader(managerAccountBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -75,7 +73,6 @@ func TestManagerAccountUpdate(t *testing.T) {
 	result.Password = "Test"
 	result.RoleID = "Administrator"
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}

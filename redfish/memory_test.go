@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"github.com/jtoft-crusoe/gofish/common"
 )
 
 var memoryBody = `{
@@ -89,7 +89,6 @@ var memoryBody = `{
 func TestMemory(t *testing.T) {
 	var result Memory
 	err := json.NewDecoder(strings.NewReader(memoryBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -132,7 +131,6 @@ func TestMemory(t *testing.T) {
 func TestMemoryUpdate(t *testing.T) { //nolint:dupl
 	var result Memory
 	err := json.NewDecoder(strings.NewReader(memoryBody)).Decode(&result)
-
 	if err != nil {
 		t.Errorf("Error decoding JSON: %s", err)
 	}
@@ -142,7 +140,6 @@ func TestMemoryUpdate(t *testing.T) { //nolint:dupl
 
 	result.SecurityState = FrozenSecurityStates
 	err = result.Update()
-
 	if err != nil {
 		t.Errorf("Error making Update call: %s", err)
 	}
